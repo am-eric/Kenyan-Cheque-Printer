@@ -571,7 +571,26 @@ const updatePrintStyles = (bankInfo) => {
           {formData.memo}
         </div>
       </div>
+
+        {/* Watermark Footer */}
+        <footer className="no-print text-center py-4 text-gray-500 text-sm mt-8 border-t border-gray-200">
+          <p>
+            Developed by{' '}
+            <a 
+              href="https://github.com/am-eric" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-800 underline"
+            >
+              am-eric
+            </a>
+          </p>
+        </footer>
+
+
     </div>
+
+    
   );
 }
 
