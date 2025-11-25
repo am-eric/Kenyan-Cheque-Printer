@@ -185,14 +185,13 @@ const updatePrintStyles = (bankInfo) => {
         left: ${positions.payee.left}mm; 
         top: ${positions.payee.top}mm;
         text-transform: uppercase;
-        font-size: 10pt;
+        font-size: 8pt;
       }
 
       .print-amount-figures { 
         position: absolute; 
         left: ${positions.amount.left}mm; 
         top: ${positions.amount.top}mm;
-        font-weight: bold;
         font-size: 12pt;
       }
 
@@ -251,7 +250,7 @@ const updatePrintStyles = (bankInfo) => {
         if (part.includes(' HUNDRED ')) {
           const hundredSplit = part.split(' HUNDRED ');
           if (hundredSplit.length > 1 && hundredSplit[1].trim()) {
-            return hundredSplit[0] + ' HUNDRED AND ' + hundredSplit[1];
+            return hundredSplit[0] + ' HUNDRED ' + hundredSplit[1];
           }
         }
         return part;
@@ -360,7 +359,7 @@ const updatePrintStyles = (bankInfo) => {
 
       <div className="container mx-auto p-4 no-print">
         <header className="mb-8 text-center">
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">Kenyan Cheque Printer</h1>
+          <h1 className="text-3xl font-bold text-gray-800 mb-2">Malibu Pharmacy Cheque Printer</h1>
           <p className="text-gray-600">Manage recurring payments and print cheques easily.</p>
         </header>
 
@@ -565,7 +564,7 @@ const updatePrintStyles = (bankInfo) => {
           {wordLines.line2}
         </div>
         <div className="print-amount-figures">
-          {formData.amount ? parseInt(formData.amount).toLocaleString() : ''}
+          {formData.amount ? `${parseInt(formData.amount).toLocaleString()} ***` : ''}
         </div>
         <div className="print-memo">
           {formData.memo}
